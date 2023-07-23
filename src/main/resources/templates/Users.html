@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <title>Demo</title>
+
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Users List</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="srch">
+            <div class="navbar-form">
+                <input class="form-control" type="text" name="search" placeholder="search books..">
+                <button style="background-color: #6db6b9e6;" type="submit" name="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+                </button> 
+            </div>
+        </div>
+    </nav>  
+       
+
+    <table id="customers">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Contact Number</th>
+            <th>Vaccine Name</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="ds:${data}">
+            <td th:text="${ds.id}"></td>
+            <td th:text="${ds.name}"> 
+            </td>
+            <td th:text="${ds.contactno}">
+            </td>
+            <td th:text="${ds.vacname}">
+            </td>
+            <td>
+                <a class="btn btn-primary" th:href="@{/edit/{id}(id=${ds.id})}">Edit</a>
+                <a href="" class="btn btn-primary" th:href="@{/delete/{id}(id=${ds.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

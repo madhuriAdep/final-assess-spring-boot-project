@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <title>Demo</title>
+    <style>
+        .center {
+            text-align: center;
+            margin: auto;
+            margin-top: 50px;
+            width: 20%;
+            border: 3px solid black;
+            padding: 10px;
+        }
+        .placeholder{
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+
+<body style="background-color: rgb(15, 219, 151)">
+
+    <div class="center">
+            <header>vaccination Form</header><br>
+            <section>
+                <form action="#" th:action="@{/list}" method="post">
+                    <table>
+                        <td>
+                            <tr>Id Type: </tr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="text" placeholder="ID type" name="idtype"><br><br>
+                            <tr>Name : </tr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="text" placeholder="Name" name="name"><br><br>
+                            <tr>contact Number : </tr>
+                            <input type="text" placeholder="contact no" name="contactno" maxlength="10"><br><br>
+                            <tr>vaccine name : </tr>
+                            <input type="text" placeholder="vaccine name" name="vacname"><br><br>
+                        </td><br>
+
+                        <input type="submit" class="btn btn-primary">
+                    </table>
+                </form>
+            </section>
+    </div>
+</body>
+
+</html>
